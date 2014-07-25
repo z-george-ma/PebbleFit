@@ -1,0 +1,24 @@
+{
+  "uuid": "7d915474-556d-47c9-b15d-caf59f7c3284",
+  "shortName": "Pebble Fit",
+  "longName": "Pebble Fit",
+  "companyName": "GeorgeMa",
+  "versionCode": 1,
+  "versionLabel": "1.0.0",
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+      {
+        "menuIcon": true,
+        "type": "png",
+        "name": "IMAGE_MENU_ICON",
+        "file": "images/menu_icon_simplicity.png"
+      }
+    ]
+  }
+}

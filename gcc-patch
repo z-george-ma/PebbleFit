@@ -1,0 +1,22 @@
+#!/bin/sh
+GCC_PATH=$(dirname `which pebble`)/../arm-cs-tools/bin
+
+if [ ! -f $GCC_PATH/arm-none-eabi-gcc.bak ]
+then
+  mv $GCC_PATH/arm-none-eabi-gcc $GCC_PATH/arm-none-eabi-gcc.bak
+
+  echo '#!/bin/bash
+
+args=""
+while [ $# != 0 ]; do
+  if [ $1 = "-std=c99" ]; then 
+    args="$args -std=gnu99"
+  else
+    args="$args $1"
+  fi
+  shift
+done
+exec "$0.bak" $args
+' > $GCC_PATH/arm-none-eabi-gcc
+chmod a+x $GCC_PATH/arm-none-eabi-gcc
+fi
