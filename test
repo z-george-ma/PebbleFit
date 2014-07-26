@@ -1,0 +1,6 @@
+#!/bin/sh
+
+tar jcf pebblefit.tbz . --exclude=".git" --exclude="build"
+scp -i ~/debian pebblefit.tbz debian@192.168.1.4:~/ > /dev/null
+rm pebblefit.tbz
+ssh -i ~/debian debian@192.168.1.4 "~/test"
